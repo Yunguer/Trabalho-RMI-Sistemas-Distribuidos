@@ -11,24 +11,24 @@ O cliente possui duas opções de execução: modo publish e modo subscribe. Em 
 
 ## Para executar o projeto, siga os seguintes passos:
 
-0- Os arquivos já estão compilados, mas para compilá-los, entrar na pasta PubSub e executar o código para compilação:
+1. Os arquivos já estão compilados, mas para compilá-los, entrar na pasta PubSub e executar o código para compilação:
 
     cd PubSub
     javac -d classes Cell.java Client.java ClientImpl.java Server.java ServerImpl.java
 
-1- entrar na pasta PubSub/classes e executar rmiregistry
+2. entrar na pasta PubSub/classes e executar rmiregistry
 
     cd classes
     rmiregistry
 
-2- Na pasta PubSub, em um novo terminal, executar o comando para iniciar o servidor:
+3. Na pasta PubSub, em um novo terminal, executar o comando para iniciar o servidor:
 
     cd PubSub
     java -classpath classes -Djava.rmi.server.codebase=file:classes/ PubSub.ServerImpl
 
    obs.: caso tenha funcionado, irá aparecer "Server Ready".
 
-3- Na pasta PubSub, em um novo terminal para cada cliente, executar o comando para iniciar o cliente:
+4. Na pasta PubSub, em um novo terminal para cada cliente, executar o comando para iniciar o cliente:
 
     cd PubSub
     java -classpath classes -Djava.rmi.server.codebase=file:classes/ PubSub.ClientImpl [user] [mode] [channel]
